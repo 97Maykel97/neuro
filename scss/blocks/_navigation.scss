@@ -1,0 +1,39 @@
+.navigation {
+	margin-top: 33px;
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+	}
+
+	&__item {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.28571;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: #fff;
+		&-active {
+			font-weight: 700;
+			font-size: 14px;
+			letter-spacing: 0.03em;
+			color: #fff;
+		}
+	}
+}
+
+@media (max-width: 708px) {
+	.navigation {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 617px) {
+	.navigation {
+		margin-top: 12px;
+		&__list {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+}

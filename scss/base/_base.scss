@@ -1,0 +1,24 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0 30px;
+	&__header {
+		max-width: 1140px;
+		padding: 15px;
+		margin: 0 auto;
+	}
+	&__nav {
+		max-width: 805px;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+}
+
+a {
+	color: #fff;
+}
