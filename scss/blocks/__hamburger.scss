@@ -15,13 +15,14 @@
 		height: 10px;
 		span {
 			display: block;
-			background-color: $white;
+			background-color: $second-color;
 			width: 20px;
 			height: 2px;
 			margin-bottom: 2px;
 			transform: 0.5s all;
 		}
 		&_active {
+			position: fixed;
 			span {
 				margin-bottom: -2px;
 				&:nth-child(1) {
