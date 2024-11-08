@@ -5,3 +5,17 @@ $text-color: #484848;
 $hover-color: #1a76dc;
 $white: #fff;
 $black: #000000;
+
+@mixin btn {
+	display: inline-block;
+	border-radius: 4px;
+	padding: 12px 33px 15px;
+	box-shadow: 0 4px 10px 0 rgba(28, 69, 107, 0.25);
+	background: #013476;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1;
+	letter-spacing: 0.02em;
+}

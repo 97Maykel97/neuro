@@ -1,0 +1,109 @@
+.more {
+	background-image: url('../img/more-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	// background-size: cover;
+
+	position: relative;
+	padding: 107px 0 105px 0;
+	&__title {
+		margin-left: 89px;
+		max-width: 523px;
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 1.3;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		color: #484848;
+	}
+	&__btn {
+		margin-top: 104px;
+		margin-left: 89px;
+		padding: 12px 33px 15px 33px;
+		@include btn;
+	}
+}
+
+/* Основные стили слайдера */
+.slider {
+	position: relative;
+	width: 100%;
+	max-width: 1140px;
+	overflow: hidden;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	.slides {
+		display: flex;
+		transition: transform 0.5s ease;
+	}
+	.slide {
+		min-width: 100%;
+		padding: 20px;
+	}
+
+	/* Кнопки навигации */
+	.prev,
+	.next {
+		position: absolute;
+		width: 51px;
+		height: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+		box-shadow: 5px 5px 10px 0 rgba(26, 118, 220, 0.25);
+		background-color: #013476;
+		color: #fff;
+		border-radius: 8px;
+		padding: 10px;
+		cursor: pointer;
+		font-size: 20px;
+	}
+	.prev {
+		left: 10px;
+		background-image: url('../img/prev.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	.next {
+		right: 10px;
+		background-image: url('../img/next.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+@media (max-width: 775px) {
+	.more__title {
+		font-size: 35px;
+	}
+}
+
+/* Для устройств с разрешением 650px и ниже */
+@media (max-width: 770px) {
+	.more {
+		&__title {
+			font-size: 30px;
+		}
+		&__btn {
+			margin-top: 50px;
+		}
+	}
+	.slider {
+		max-width: 100%;
+		.prev,
+		.next {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.more {
+		&__title {
+			margin-left: 0px;
+		}
+		&__btn {
+			margin-left: 0px;
+		}
+	}
+}
