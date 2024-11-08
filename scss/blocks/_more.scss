@@ -101,9 +101,12 @@
 	.more {
 		&__title {
 			margin-left: 0px;
+			text-align: center;
 		}
 		&__btn {
+			display: block;
 			margin-left: 0px;
+			text-align: center;
 		}
 	}
 }
