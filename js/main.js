@@ -1,3 +1,42 @@
+// бургер меню
+
+window.addEventListener('DOMContentLoaded', () => {
+	const menu = document.querySelector('.navigation__list'),
+		menuItem = document.querySelectorAll('.navigation__item'),
+		hamburger = document.querySelector('.hamburger');
+
+	// Открытие/закрытие меню при клике на бургер
+	hamburger.addEventListener('click', e => {
+		e.stopPropagation(); // предотвращаем распространение события, чтобы не закрыть меню сразу
+		hamburger.classList.toggle('hamburger_active');
+		menu.classList.toggle('navigation__list_active');
+	});
+
+	// Закрытие меню при клике на пункт меню
+	menuItem.forEach(item => {
+		item.addEventListener('click', () => {
+			hamburger.classList.remove('hamburger_active');
+			menu.classList.remove('navigation__list_active');
+		});
+	});
+
+	// Закрытие меню при клике вне меню или бургера
+	document.addEventListener('click', e => {
+		// Проверяем, был ли клик вне меню и бургера
+		if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+			hamburger.classList.remove('hamburger_active');
+			menu.classList.remove('navigation__list_active');
+		}
+	});
+
+	// Предотвращаем закрытие меню при клике внутри самого меню
+	menu.addEventListener('click', e => {
+		e.stopPropagation();
+	});
+});
+
+// слайдер
+
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const slides = document.querySelector('.slides');

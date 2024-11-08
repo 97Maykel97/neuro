@@ -32,8 +32,30 @@
 	.navigation {
 		margin-top: 12px;
 		&__list {
+			z-index: 1;
+			position: fixed;
 			flex-direction: column;
+			justify-content: center;
 			gap: 10px;
+			top: 0;
+			left: -100%;
+			width: 50%;
+			height: 100vh;
+			padding: 20px 15px;
+			background-color: rgba($color: $main-color, $alpha: 0.8);
+			transform: 0.6s all;
+			&_active {
+				left: 0;
+			}
+		}
+
+		&__item {
+			padding-right: 0;
+			bottom: none;
+			margin: 10px 0;
+		}
+		&__link {
+			font-size: 18px;
 		}
 	}
 }
