@@ -35,7 +35,9 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
-// слайдер
+// конец бургер меню
+
+// слайдер секции about
 
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
@@ -126,3 +128,4 @@ slides.addEventListener('mouseup', () => {
 slides.addEventListener('mouseleave', () => {
 	isSwiping = false; // Завершаем перетаскивание, если курсор покинул область слайдера
 });
+// конец слайдера секции about
