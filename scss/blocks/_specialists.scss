@@ -1,11 +1,45 @@
 .specialists {
 	margin-top: 67px;
 	&__title {
+		text-align: center;
 		font-weight: 700;
 		font-size: 30px;
 		line-height: 1;
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
 		color: #013476;
+	}
+
+	&__img {
+		text-align: center;
+		margin-top: 70px;
+		max-height: 672px;
+		width: 100%;
+	}
+
+	&__btn {
+		display: block;
+		width: 246px;
+		height: 45px;
+		margin: 0 auto;
+		background-color: red;
+		padding: 12px 26px 15px 26px;
+		text-align: center;
+		@include btn;
+		margin-top: 71px;
+	}
+}
+
+@media (max-width: 425px) {
+	.specialists {
+		&__title {
+			font-size: 28px;
+		}
+		&__img {
+			margin-top: 50px;
+		}
+		&__btn {
+			margin-top: 50px;
+		}
 	}
 }
