@@ -45,24 +45,53 @@ const slides = document.querySelector('.slides');
 let currentIndex = 0;
 let startX = 0;
 let isSwiping = false;
+let autoSlideInterval = null;
 
 function updateSlider() {
 	const slideWidth = slides.clientWidth;
 	slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
+// Функция для запуска автопереключения слайдов
+function startAutoSlider() {
+	if (autoSlideInterval) return; // Не запускаем, если автопереключение уже активно
+
+	autoSlideInterval = setInterval(() => {
+		currentIndex = currentIndex < 2 ? currentIndex + 1 : 0; // 2 — это последний индекс слайдера
+		updateSlider();
+	}, 5000); // Переключение слайдов каждые 5 секунды
+}
+
+// Функция для остановки автопереключения слайдов
+function stopAutoSlider() {
+	if (autoSlideInterval) {
+		clearInterval(autoSlideInterval);
+		autoSlideInterval = null;
+	}
+}
+
 // Обработчики для кнопок переключения слайдов
 prevBtn.addEventListener('click', () => {
 	currentIndex = currentIndex > 0 ? currentIndex - 1 : 2; // 2 — это последний индекс слайдера
 	updateSlider();
+	stopAutoSlider(); // Останавливаем автопереключение, если пользователь вручную переключил слайд
 });
 
 nextBtn.addEventListener('click', () => {
 	currentIndex = currentIndex < 2 ? currentIndex + 1 : 0; // 2 — это последний индекс слайдера
 	updateSlider();
+	stopAutoSlider(); // Останавливаем автопереключение, если пользователь вручную переключил слайд
 });
 
-window.addEventListener('resize', updateSlider);
+window.addEventListener('resize', () => {
+	updateSlider();
+	// Если ширина экрана в пределах 375px и 768px, включаем автопереключение
+	if (window.innerWidth <= 768 && window.innerWidth >= 375) {
+		startAutoSlider();
+	} else {
+		stopAutoSlider();
+	}
+});
 
 // Для мобильных устройств и сенсорных экранов
 slides.addEventListener('touchstart', e => {
@@ -128,4 +157,9 @@ slides.addEventListener('mouseup', () => {
 slides.addEventListener('mouseleave', () => {
 	isSwiping = false; // Завершаем перетаскивание, если курсор покинул область слайдера
 });
+
+// Инициализация автопереключения при загрузке страницы
+if (window.innerWidth <= 768 && window.innerWidth >= 375) {
+	startAutoSlider();
+}
 // конец слайдера секции about
