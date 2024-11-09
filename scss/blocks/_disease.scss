@@ -1,0 +1,122 @@
+.disease {
+	margin-top: 89px;
+	&__blocks {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+	}
+	&__info {
+		border-radius: 8px;
+		width: 330px;
+		height: 260px;
+		box-shadow: 3px 3px 35px 0 rgba(0, 0, 0, 0.1);
+		background: $white;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: 3px 3px 35px 0 #1a76dc;
+			background: $second-color;
+			.disease {
+				&__title {
+					color: $white;
+				}
+				&__text {
+					color: $white;
+				}
+				&__more {
+					color: $white;
+					border-bottom: 1px solid $white;
+				}
+			}
+		}
+
+		&-first:hover {
+			.disease__icon-first {
+				background-image: url('../img/disease1Hover.svg');
+			}
+		}
+		&-second:hover {
+			.disease__icon-second {
+				background-image: url('../img/disease2Hover.svg');
+			}
+		}
+		&-third:hover {
+			.disease__icon-third {
+				background-image: url('../img/disease3Hover.svg');
+			}
+		}
+	}
+	&__icon {
+		margin: 0 auto;
+		margin-top: 40px;
+		&-first {
+			background-image: url('../img/disease1.svg');
+			width: 40px;
+			height: 40px;
+		}
+		&-second {
+			background-image: url('../img/disease2.svg');
+			width: 46.48px;
+			height: 43.97px;
+		}
+		&-third {
+			background-image: url('../img/disease3.svg');
+			width: 28.26px;
+			height: 44.98px;
+		}
+	}
+
+	&__title {
+		margin-top: 21px;
+		font-weight: 700;
+		font-size: 18px;
+		letter-spacing: 0.02em;
+		color: $black;
+	}
+
+	&__text {
+		margin: 0 auto;
+		margin-top: 13px;
+		max-width: 260px;
+		height: 44px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.14286;
+		letter-spacing: 0.03em;
+		text-align: center;
+		color: #484848;
+		margin-bottom: 33px;
+	}
+
+	&__more {
+		margin: 0 auto;
+		max-width: 82px;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 1.14286;
+		letter-spacing: 0.03em;
+		text-align: center;
+		color: $second-color;
+	}
+}
+
+@media (max-width: 1200px) {
+	.disease {
+		&__blocks {
+			display: flex;
+			gap: 20px;
+			justify-content: space-between;
+			text-align: center;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.disease {
+		pointer-events: none;
+		&__info {
+		}
+	}
+}
