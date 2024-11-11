@@ -2,8 +2,7 @@
 	background-image: url('../img/more-bg.jpg');
 	background-repeat: no-repeat;
 	background-position: center top;
-	// background-size: cover;
-
+	background-size: cover;
 	position: relative;
 	padding: 107px 0 105px 0;
 	&__title {
@@ -31,9 +30,7 @@
 	width: 100%;
 	max-width: 1140px;
 	overflow: hidden;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+
 	.slides {
 		display: flex;
 		transition: transform 0.5s ease;

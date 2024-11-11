@@ -1,19 +1,17 @@
 .specialists {
 	margin-top: 67px;
 	&__title {
-		text-align: center;
-		font-weight: 700;
-		font-size: 30px;
-		line-height: 1;
-		letter-spacing: 0.01em;
-		text-transform: uppercase;
-		color: #013476;
+		@include title;
 	}
 
 	&__img {
 		text-align: center;
 		margin-top: 70px;
 		width: 100%;
+		img {
+			box-shadow: 6px 6px 25px 0 rgba(0, 0, 0, 0.25);
+			border-radius: 4px;
+		}
 	}
 
 	&__btn {

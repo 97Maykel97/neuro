@@ -1,9 +1,11 @@
 .about {
-	margin-top: 63px;
+	margin-top: 70px;
 	&__img {
 		margin-left: 89px;
 		img {
 			width: 100%;
+			border-radius: 4px;
+			box-shadow: 5px 5px 25px 0 #c4c4c4;
 		}
 	}
 	&__info {
@@ -27,8 +29,16 @@
 
 	&__line {
 		margin-top: 15px;
-		width: 67px;
-		border: 1px solid $second-color;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 67px;
+			border: 1px solid $second-color;
+		}
 	}
 
 	&__text {

@@ -10,13 +10,18 @@ body {
 	padding: 0 30px;
 	&__header {
 		max-width: 1140px;
-		padding: 15px;
 		margin: 0 auto;
 	}
 	&__nav {
 		max-width: 805px;
 		margin: 0 auto;
 		padding: 0 15px;
+	}
+	&__news {
+		position: relative;
+		max-width: 1290px;
+		padding: 0 30;
+		margin: 0 auto;
 	}
 }
 

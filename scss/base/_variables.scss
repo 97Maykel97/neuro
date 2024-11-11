@@ -17,3 +17,12 @@ $black: #000000;
 	line-height: 1;
 	letter-spacing: 0.02em;
 }
+@mixin title {
+	text-align: center;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 1;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+	color: #013476;
+}
