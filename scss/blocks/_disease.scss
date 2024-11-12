@@ -1,6 +1,11 @@
+.title {
+	@include title;
+}
+
 .disease {
-	margin-top: 89px;
+	margin-top: 82px;
 	&__blocks {
+		margin-top: 54px;
 		display: flex;
 		justify-content: space-between;
 		text-align: center;
