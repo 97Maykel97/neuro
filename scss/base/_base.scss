@@ -19,6 +19,7 @@ body {
 	}
 	&__news {
 		position: relative;
+		overflow: hidden;
 		max-width: 1290px;
 		padding: 0 30;
 		margin: 0 auto;
