@@ -1,0 +1,208 @@
+/* Основной контейнер для всего раздела */
+.information {
+	margin-top: 50px;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	// кнопки слайдера
+	&__dots {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+		margin-top: 20px;
+	}
+
+	&__dot {
+		@include dot;
+	}
+	&__dot.active {
+		background-color: #007bff;
+	}
+}
+
+.contacts {
+	&__title {
+		@include title;
+	}
+	&__text {
+		margin-top: 45px;
+		max-width: 434px;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.125;
+		letter-spacing: 0.03em;
+		color: $black;
+	}
+	&__btn {
+		margin-top: 25px;
+		display: inline-block;
+		@include btn;
+		padding: 12px 32px 15px 32px;
+	}
+}
+
+.specialists {
+	&__text {
+		margin-top: 25px;
+		max-width: 434px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.125;
+		letter-spacing: 0.03em;
+		color: $black;
+	}
+	&__button {
+		margin-top: 25px;
+		display: inline-block;
+		@include btn;
+		padding: 12px 33px 15px 33px;
+	}
+}
+
+/* Блок с отзывами */
+.reviews {
+	width: 48%;
+	&__title {
+		@include title;
+	}
+	&__subtitle {
+		position: relative;
+		margin-top: 44px;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1;
+		letter-spacing: 0.02em;
+		color: $black;
+	}
+	&__text {
+		margin-top: 15px;
+		max-width: 425px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.28571;
+		letter-spacing: 0.03em;
+		color: $black;
+	}
+}
+
+/* Слайдер */
+.information__slider {
+	position: relative;
+	overflow: hidden;
+}
+
+.information__slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.information__slide {
+	min-width: 100%;
+	padding: 20px;
+}
+
+.divider {
+	margin: 0 20px;
+	margin-top: 114px;
+	background-color: #1c609e;
+	width: 2px;
+	height: 180px;
+}
+
+@media (max-width: 768px) {
+	.information__wrapper {
+		flex-direction: column;
+		align-items: center;
+		&__dots {
+			gap: 8px;
+		}
+		&__slide {
+			padding: 15px;
+		}
+	}
+
+	.contacts,
+	.reviews {
+		margin-bottom: 20px;
+	}
+
+	.reviews {
+		&__subtitle {
+			font-size: 19px;
+		}
+		&__text {
+			font-size: 14px;
+		}
+	}
+
+	.divider {
+		height: 2px;
+		width: 180px;
+		margin: 30px 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.information__wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.contacts,
+	.reviews {
+		width: 90%;
+		margin-bottom: 20px;
+	}
+
+	.reviews {
+		&__subtitle {
+			font-size: 16px;
+		}
+		&__text {
+			font-size: 14px;
+		}
+	}
+
+	.information {
+		&__dots {
+			gap: 6px;
+		}
+		&__slide {
+			padding: 10px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.contacts__title,
+	.reviews__title {
+		font-size: 19px;
+	}
+
+	.contacts__btn,
+	.specialists__button {
+		font-size: 16px;
+	}
+
+	.information {
+		&__slider {
+			position: relative;
+			margin-bottom: 20px;
+		}
+		&__slide {
+			min-width: 100%;
+			padding: 10px;
+		}
+	}
+	.reviews {
+		&__subtitle {
+			font-size: 16px;
+		}
+		&__text {
+			font-size: 13px;
+		}
+	}
+}

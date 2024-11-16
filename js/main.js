@@ -163,3 +163,43 @@ if (window.innerWidth <= 768 && window.innerWidth >= 375) {
 	startAutoSlider();
 }
 // конец слайдера секции about
+
+// слайдер information
+document.addEventListener('DOMContentLoaded', function () {
+	const slides = document.querySelectorAll('.information__slide'); // Все слайды
+	const dots = document.querySelectorAll('.information__dot'); // Все точки
+	let currentSlide = 0; // Индекс текущего слайда
+
+	// Функция для показа слайда
+	function showSlide(index) {
+		const offset = -index * 100; // Сдвиг слайдов влево на 100% для показа нужного слайда
+		document.querySelector(
+			'.information__slides'
+		).style.transform = `translateX(${offset}%)`;
+
+		// Обновляем активную точку
+		dots.forEach((dot, i) => {
+			dot.classList.toggle('active', i === index);
+		});
+	}
+
+	// Функция для переключения слайдов
+	function nextSlide() {
+		currentSlide = (currentSlide + 1) % slides.length; // Переход к следующему слайду
+		showSlide(currentSlide);
+	}
+
+	// Инициализация слайдера
+	showSlide(currentSlide);
+
+	// Автоматическое переключение слайдов каждые 5 секунд
+	setInterval(nextSlide, 5000);
+
+	// Обработчик для точек
+	dots.forEach((dot, index) => {
+		dot.addEventListener('click', function () {
+			currentSlide = index;
+			showSlide(currentSlide);
+		});
+	});
+});

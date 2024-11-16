@@ -26,3 +26,22 @@ $black: #000000;
 	text-transform: uppercase;
 	color: #013476;
 }
+
+@mixin dot {
+	display: inline-block;
+	background: #ccc;
+	margin-top: 20px;
+	margin-right: 10px;
+	border-radius: 4px;
+	width: 12px;
+	height: 12px;
+	background-color: $second-color;
+	cursor: pointer;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+@mixin dotActive {
+	background-color: #1a76dc;
+}
