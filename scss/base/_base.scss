@@ -9,10 +9,12 @@ body {
 	margin: 0 auto;
 	max-width: 1200px;
 	padding: 0 30px;
-	&__header {
+	&__header,
+	&__footer {
 		max-width: 1140px;
 		margin: 0 auto;
 	}
+
 	&__nav {
 		max-width: 805px;
 		margin: 0 auto;
