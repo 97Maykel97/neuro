@@ -170,6 +170,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	const dots = document.querySelectorAll('.information__dot'); // Все точки
 	let currentSlide = 0; // Индекс текущего слайда
 
+	let isMouseDown = false; // Проверка, нажата ли мышь
+	let startX = 0; // Начальная позиция мыши или пальца
+	let scrollStart = 0; // Начальная позиция слайдов
+
 	// Функция для показа слайда
 	function showSlide(index) {
 		const offset = -index * 100; // Сдвиг слайдов влево на 100% для показа нужного слайда
@@ -189,6 +193,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		showSlide(currentSlide);
 	}
 
+	function prevSlide() {
+		currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Переход к предыдущему слайду
+		showSlide(currentSlide);
+	}
+
 	// Инициализация слайдера
 	showSlide(currentSlide);
 
@@ -201,5 +210,70 @@ document.addEventListener('DOMContentLoaded', function () {
 			currentSlide = index;
 			showSlide(currentSlide);
 		});
+	});
+
+	// Обработчики для перетаскивания слайдов с помощью мыши
+	const slider = document.querySelector('.information__slider');
+	slider.addEventListener('mousedown', e => {
+		isMouseDown = true;
+		startX = e.pageX; // Запоминаем начальную позицию мыши
+		scrollStart = document.querySelector('.information__slides').offsetLeft; // Запоминаем начальную позицию слайдов
+	});
+
+	slider.addEventListener('mouseleave', () => {
+		isMouseDown = false; // Выход мыши из области слайдера
+	});
+
+	slider.addEventListener('mouseup', () => {
+		isMouseDown = false; // Отпускание кнопки мыши
+	});
+
+	slider.addEventListener('mousemove', e => {
+		if (!isMouseDown) return; // Если не нажата кнопка мыши, ничего не делаем
+
+		const moveX = e.pageX - startX; // Сколько пикселей переместился указатель
+		const slideContainer = document.querySelector('.information__slides');
+
+		slideContainer.style.transform = `translateX(${scrollStart + moveX}px)`; // Двигаем слайды вместе с мышью
+
+		if (moveX < -50) {
+			// Если переместили на достаточное расстояние влево
+			nextSlide();
+			isMouseDown = false;
+		} else if (moveX > 50) {
+			// Если переместили на достаточное расстояние вправо
+			prevSlide();
+			isMouseDown = false;
+		}
+	});
+
+	// Обработчики для перетаскивания слайдов на мобильных устройствах
+	slider.addEventListener('touchstart', e => {
+		isMouseDown = true;
+		startX = e.touches[0].pageX; // Начальная позиция пальца
+		scrollStart = document.querySelector('.information__slides').offsetLeft; // Запоминаем начальную позицию слайдов
+	});
+
+	slider.addEventListener('touchend', () => {
+		isMouseDown = false; // Отпускание пальца
+	});
+
+	slider.addEventListener('touchmove', e => {
+		if (!isMouseDown) return; // Если не нажата кнопка мыши или не проведено касание
+
+		const moveX = e.touches[0].pageX - startX; // Сколько пикселей переместился палец
+		const slideContainer = document.querySelector('.information__slides');
+
+		slideContainer.style.transform = `translateX(${scrollStart + moveX}px)`; // Двигаем слайды вместе с пальцем
+
+		if (moveX < -50) {
+			// Если переместили на достаточное расстояние влево
+			nextSlide();
+			isMouseDown = false;
+		} else if (moveX > 50) {
+			// Если переместили на достаточное расстояние вправо
+			prevSlide();
+			isMouseDown = false;
+		}
 	});
 });

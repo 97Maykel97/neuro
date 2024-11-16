@@ -7,6 +7,23 @@
 		align-items: flex-start;
 	}
 
+	/* Слайдер */
+	&__slider {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__slides {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+	}
+
+	&__slide {
+		min-width: 100%;
+		padding: 20px;
+		user-select: none;
+	}
+
 	// кнопки слайдера
 	&__dots {
 		display: flex;
@@ -86,22 +103,6 @@
 		letter-spacing: 0.03em;
 		color: $black;
 	}
-}
-
-/* Слайдер */
-.information__slider {
-	position: relative;
-	overflow: hidden;
-}
-
-.information__slides {
-	display: flex;
-	transition: transform 0.5s ease-in-out;
-}
-
-.information__slide {
-	min-width: 100%;
-	padding: 20px;
 }
 
 .divider {
