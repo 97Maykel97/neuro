@@ -19,6 +19,7 @@
 	}
 
 	&__slide {
+		position: relative;
 		min-width: 100%;
 		padding: 20px;
 		user-select: none;
@@ -90,16 +91,26 @@
 		@include title;
 	}
 	&__subtitle {
-		position: relative;
 		margin-top: 44px;
 		font-weight: 700;
+		margin-left: 23px;
 		font-size: 18px;
 		line-height: 1;
 		letter-spacing: 0.02em;
 		color: $black;
+		&::after {
+			position: absolute;
+			content: '';
+			width: 24px;
+			height: 24px;
+			background-image: url('../img/quotes.svg');
+			top: 38px;
+			left: 0;
+		}
 	}
 	&__text {
 		margin-top: 15px;
+		margin-left: 23px;
 		max-width: 425px;
 		font-weight: 400;
 		font-size: 14px;
