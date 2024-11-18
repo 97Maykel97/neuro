@@ -1,5 +1,5 @@
 .footer {
-	margin-top: 222px;
+	margin-top: 70px;
 	background-color: $main-color;
 	padding: 40px 0 25px;
 	&__info {
@@ -16,7 +16,7 @@
 		&__text {
 			font-weight: 400;
 			font-size: 14px;
-			line-height: 1.07143;
+			line-height: 1;
 			letter-spacing: 0.03em;
 			color: $white;
 		}
@@ -42,7 +42,6 @@
 
 @media (max-width: 900px) {
 	.footer {
-		margin-top: 100px;
 		&__info {
 			flex-direction: column;
 			gap: 20px;

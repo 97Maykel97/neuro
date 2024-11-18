@@ -29,10 +29,10 @@
 		display: flex;
 		justify-content: center;
 		gap: 10px;
-		margin-top: 20px;
 	}
 
 	&__dot {
+		margin-top: 20px;
 		@include dot;
 	}
 	&__dot.active {
@@ -41,15 +41,17 @@
 }
 
 .contacts {
+	&__wrapper {
+		margin-top: 45px;
+	}
 	&__title {
 		@include title;
 	}
 	&__text {
-		margin-top: 45px;
 		max-width: 434px;
 		font-weight: 400;
 		font-size: 16px;
-		line-height: 1.125;
+		line-height: 1;
 		letter-spacing: 0.03em;
 		color: $black;
 	}
@@ -62,12 +64,14 @@
 }
 
 .specialists {
-	&__text {
+	&__wrapper {
 		margin-top: 25px;
+	}
+	&__text {
 		max-width: 434px;
 		font-weight: 500;
 		font-size: 16px;
-		line-height: 1.125;
+		line-height: 1;
 		letter-spacing: 0.03em;
 		color: $black;
 	}
@@ -99,7 +103,7 @@
 		max-width: 425px;
 		font-weight: 400;
 		font-size: 14px;
-		line-height: 1.28571;
+		line-height: 1.2;
 		letter-spacing: 0.03em;
 		color: $black;
 	}
