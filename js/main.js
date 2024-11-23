@@ -1,3 +1,30 @@
+//news
+
+$(document).ready(function () {
+	$('.owl-carousel').owlCarousel({
+		loop: true,
+		controlsText: ['<img src:"../img/prev.svg"'],
+
+		nav: true,
+		navText: [
+			"<button class='news__prev'></button>",
+			"<button class='news__next'></button>",
+		],
+		responsive: {
+			0: {
+				items: 1,
+			},
+			700: {
+				items: 2,
+				margin: 21,
+			},
+			1000: {
+				items: 3,
+			},
+		},
+	});
+});
+
 // бургер меню
 
 window.addEventListener('DOMContentLoaded', () => {

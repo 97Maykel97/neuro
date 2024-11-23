@@ -36,3 +36,21 @@ a {
 .hidden {
 	display: none;
 }
+
+.news__prev {
+	left: 23px;
+	background-image: url('../img/newsPrev.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 34px;
+}
+
+.news__next {
+	right: 23px;
+	background-image: url('../img/newsNext.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 34px;
+}

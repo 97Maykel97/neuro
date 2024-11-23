@@ -194,69 +194,69 @@
 		<section class="news">
 			<div class="container__news">
 				<h2 class="news__title">Новости</h2>
-				<div class="news__slider">
-					<div class="news__slides">
-						<div class="news__slide">
-							<time class="news__date">21.12.2018</time>
-							<img
-								src="img/news1.jpg"
-								alt="на изображении операционная"
-								class="news__img"
-							/>
-							<div class="slide__title">
-								При оценке дизайна читаемый текст мешает сосредоточиться
-							</div>
-							<div class="slide__text">
-								Lorem Ipsum используют потому, что тот обеспечивает более или
-								менее стандартное заполнение шаблона.
-							</div>
-							<a href="#" class="news__search">
-								<img src="img/newsSearch.svg" alt="Поиск"
-							/></a>
-						</div>
-						<div class="news__slide">
-							<time class="news__date">11.02.2019</time>
-							<img
-								src="img/news2.jpg"
-								alt="на изображении клетки организма"
-								class="news__img"
-							/>
-							<div class="slide__title">Оценка перспектив на 2019 год</div>
-							<div class="slide__text">
-								Lorem Ipsum используют потому, что тот обеспечивает более или
-								менее стандартное заполнение шаблона.
-							</div>
-							<a href="#" class="news__search">
-								<img src="img/newsSearch.svg" alt="Поиск"
-							/></a>
-						</div>
-						<div class="news__slide">
-							<time class="news__date">01.01.2019</time>
-							<img
-								src="img/news3.jpg"
-								alt="на изображении ДНК"
-								class="news__img"
-							/>
-							<div class="slide__title">Текст мешает сосредоточиться</div>
-							<div class="slide__text">
-								Lorem Ipsum используют потому, что тот обеспечивает более или
-								менее стандартное заполнение шаблона.
-							</div>
-							<a href="#" class="news__search">
-								<img src="img/newsSearch.svg" alt="Поиск"
+				<div class="news__inner owl-carousel owl-theme">
+					<div class="news__slide item">
+						<time class="slide__time">21.12.2018</time>
+						<img src="img/news1.jpg" alt="" class="slide__img" />
+						<h3 class="slide__title">
+							При оценке дизайна читаемый текст мешает сосредоточиться
+						</h3>
+						<p class="slide__text">
+							Lorem Ipsum используют потому, что тот обеспечивает более или
+							менее стандартное заполнение шаблона, а также реальное
+							распределение букв.
+						</p>
+						<div class="news__search">
+							<a href="#" class="search__link">
+								<img src="img/newsSearch.svg" alt="Поиск" class="search__img"
 							/></a>
 						</div>
 					</div>
-
-					<button class="news__prev"></button>
-					<button class="news__next"></button>
-				</div>
-
-				<div class="dots">
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
+					<div class="news__slide item">
+						<time class="slide__time">11.02.2019</time>
+						<img src="img/news2.jpg" alt="" class="slide__img" />
+						<h3 class="slide__title">Оценка перспектив на 2019 год</h3>
+						<p class="slide__text">
+							Lorem Ipsum используют потому, что тот обеспечивает более или
+							менее стандартное заполнение шаблона, а также реальное
+							распределение букв.
+						</p>
+						<div class="news__search">
+							<a href="#" class="search__link">
+								<img src="img/newsSearch.svg" alt="Поиск" class="search__img"
+							/></a>
+						</div>
+					</div>
+					<div class="news__slide item">
+						<time class="slide__time">01.01.2019</time>
+						<img src="img/news3.jpg" alt="" class="slide__img" />
+						<h3 class="slide__title">Текст мешает сосредоточиться</h3>
+						<p class="slide__text">
+							Lorem Ipsum используют потому, что тот обеспечивает более или
+							менее стандартное заполнение шаблона, а также реальное
+							распределение букв.
+						</p>
+						<div class="news__search">
+							<a href="#" class="search__link">
+								<img src="img/newsSearch.svg" alt="Поиск" class="search__img"
+							/></a>
+						</div>
+					</div>
+					<div class="news__slide item">
+						<time class="slide__time">11.02.2019</time>
+						<img src="img/news2.jpg" alt="" class="slide__img" />
+						<h3 class="slide__title">Оценка перспектив на 2019 год</h3>
+						<p class="slide__text">
+							Lorem Ipsum используют потому, что тот обеспечивает более или
+							менее стандартное заполнение шаблона, а также реальное
+							распределение букв.
+						</p>
+						<div class="news__search">
+							<a href="#" class="search__link">
+								<img src="img/newsSearch.svg" alt="Поиск" class="search__img"
+							/></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -397,6 +397,10 @@
 				<div class="privacy"><a href="#">Политика конфиденциальности</a></div>
 			</div>
 		</footer>
+
+		<script src="js/jquery-3.7.1.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/test.js"></script>
 	</body>
 </html>

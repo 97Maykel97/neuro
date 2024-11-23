@@ -1,59 +1,30 @@
 .news {
-	position: relative;
-	margin-top: 62px;
-
+	padding-top: 62px;
 	&__title {
 		@include title;
 	}
-
-	&__slider {
-		margin: 0 auto;
+	&__inner {
 		margin-top: 54px;
-		width: 1142px;
-	}
-
-	&__slides {
-		display: flex;
-		justify-content: space-between;
-		overflow: hidden;
+		position: relative;
+		margin: 0 auto;
+		margin-top: 55px;
+		max-width: 1142px;
 	}
 
 	&__slide {
-		background-color: $white;
-		width: 367px;
+		padding: 13px 18px;
+		max-width: 367px;
 		border-radius: 8px;
-		padding: 0 18px;
+		background-color: $white;
 	}
-
-	&__prev,
-	&__next {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		color: #fff;
-		border: none;
-		padding: 10px;
-		cursor: pointer;
-
-		height: 34px;
+	&__search {
+		display: flex;
+		justify-content: flex-end;
 	}
+}
 
-	&__prev {
-		left: 23px;
-		background-image: url('../img/newsPrev.svg');
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-
-	&__next {
-		right: 23px;
-		background-image: url('../img/newsNext.svg');
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-
-	&__date {
-		margin-top: 14px;
+.slide {
+	&__time {
 		display: flex;
 		justify-content: flex-end;
 		font-weight: 500;
@@ -62,44 +33,10 @@
 		letter-spacing: 0.04em;
 		color: #484848;
 	}
-
 	&__img {
 		margin-top: 14px;
 	}
 
-	&__search {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		margin-bottom: 13px;
-		cursor: pointer;
-	}
-}
-
-.dots {
-	text-align: center;
-	margin-top: 20px;
-}
-
-.dot {
-	display: inline-block;
-	background: #ccc;
-	margin-right: 10px;
-	border-radius: 4px;
-	width: 12px;
-	height: 12px;
-	background-color: $second-color;
-	cursor: pointer;
-	&:last-child {
-		margin-right: 0;
-	}
-
-	&.active {
-		background-color: #17446f;
-	}
-}
-
-.slide {
 	&__title {
 		min-height: 38px;
 		max-width: 332px;
@@ -120,4 +57,27 @@
 		letter-spacing: 0.04em;
 		color: #484848;
 	}
+}
+
+.owl-carousel .item {
+	max-width: 367px;
+}
+
+.news__prev,
+.news__next {
+	z-index: 20;
+}
+
+.owl-nav button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.owl-prev {
+	left: 0;
+}
+
+.owl-next {
+	right: 0;
 }

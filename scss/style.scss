@@ -1,5 +1,7 @@
 //base
 @import 'base/reset';
+@import 'base/owl.carousel.min';
+@import 'base/owl.theme.default.min';
 @import 'base/variables';
 @import 'base/base';
 
@@ -14,3 +16,5 @@
 @import 'blocks/news';
 @import 'blocks/information';
 @import 'blocks/footer';
+@import 'blocks/modal';
+@import 'blocks/test';
