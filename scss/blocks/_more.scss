@@ -1,5 +1,5 @@
 .more {
-	background-image: url('../img/more-bg.jpg');
+	background-image: url("../img/more-bg.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
@@ -58,13 +58,15 @@
 	}
 	.prev {
 		left: 10px;
-		background-image: url('../img/prev.svg');
+		z-index: 2;
+		background-image: url("../img/prev.svg");
 		background-repeat: no-repeat;
 		background-position: center;
 	}
 	.next {
 		right: 10px;
-		background-image: url('../img/next.svg');
+		z-index: 2;
+		background-image: url("../img/next.svg");
 		background-repeat: no-repeat;
 		background-position: center;
 	}
